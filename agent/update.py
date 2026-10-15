@@ -1,392 +1,129 @@
-#!/usr/bin/env python3
-"""Update a living, *candidate* literature map from OpenAlex.
+"""Retrieve literature into a persistent candidate queue. Never overwrites curated labels.
 
-No automatic paper is declared included in a systematic review. LLM screening is
-optional and all automated output is clearly labelled pending validation.
-Standard-library-only implementation, suitable for GitHub Actions and cron.
+Examples: python -m agent.update --provider europepmc --days 120
+          python -m agent.update --input tests/fixtures/candidates.json --as-of 2026-10-15
 """
 from __future__ import annotations
 import argparse
-import hashlib
-from collections import Counter
+import copy
 from datetime import date, datetime, timedelta, timezone
 import json
 import os
 from pathlib import Path
-import re
 import sys
-import time
-from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
-from urllib.request import Request, urlopen
+from .common import ROOT, SCHEMA, CONFIG, read_json, write_json, validate_dataset, fingerprint
+from .classify import tag_candidate, VERSION
+from .providers import fetch_query, RetrievalError
 
-ROOT = Path(__file__).resolve().parents[1]
-DB = ROOT/'data'/'papers.json'
-PROGRESS = ROOT/'data'/'search_progress.json'
-# A search costs 10 OpenAlex credits ($0.001); stop with a $0.10 buffer.
-# This is a local budget limit, not a billing-control API. Do not enable prepaid
-# usage if strict zero-cost operation is required.
-FREE_SEARCH_MAX_CALLS = 900
-OPENALEX_REMAINING_CREDITS = None
-DOMAINS = ['Microbiological hazards','Chemical hazards','Food fraud & authenticity','Foodborne illness','General food safety']
-APPLICATIONS = ['Laboratory testing','Risk forecasting','Risk factor analysis','Inspection & enforcement','Early warning','Methods & perspectives']
-DATATYPES = ['Spectroscopy','Imaging & microscopy','Mass spectrometry','Monitoring & climate','Genomics & sequencing','Text & reports','Sensors & biosensors','Multimodal','Literature & reviews','Other']
-AI_METHODS = ['Classical machine learning','Deep learning','LLMs / foundation models','Hybrid / ensemble','Review / synthesis','Other / unspecified']
+def merge_records(existing: list[dict], incoming: list[dict]) -> list[dict]:
+    by_id={p['id']:copy.deepcopy(p) for p in existing}
+    for item in incoming:
+        p=copy.deepcopy(item)
+        if p['id'] in by_id:
+            old=by_id[p['id']]
+            # Preserve all screening decisions and curated fields. Append only provenance.
+            for event in p.get('provenance',[]):
+                if event not in old['provenance']: old['provenance'].append(event)
+            if not old.get('abstract') and p.get('abstract'): old['abstract']=p['abstract']
+            continue
+        p.update(tag_candidate(p['title'],p.get('abstract','')))
+        by_id[p['id']]=p
+    return sorted(by_id.values(),key=lambda x:(x['published_date'],x['id']),reverse=True)
 
-# Dashboard grouping: single-label by prominent technique, without modifying the
-# historical per-paper taxonomy or conflating reviews with techniques.
-AI_FAMILIES = ['Machine learning (ML)', 'Deep learning (DL)', 'LLMs / foundation models', 'Other / mixed']
-FM_SIGNALS = [r'\blarge language models?\b',r'\bfoundation models?\b',r'\bLLMs?\b',r'\bChatGPT\b',
-              r'\bGPT[- ]?[345]\b',r'\bgenerative (?:AI|artificial intelligence|language model)',
-              r'\bvision[- ]language models?\b',r'\bmultimodal (?:large )?language models?\b']
-def family_from_record(p):
-    method=str(p.get('ai_method') or '').lower()
-    title=str(p.get('title') or '')
-    family=p.get('ai_family')
-    if family in AI_FAMILIES and family != 'Other / mixed': return family
-    if any(re.search(pattern,title,re.I) for pattern in FM_SIGNALS) or 'llm' in method or 'foundation model' in method:
-        return AI_FAMILIES[2]
-    if 'deep learning' in method or 'neural network' in method or re.search(r'\bdeep learning\b',title,re.I):
-        return AI_FAMILIES[1]
-    if 'classical machine learning' in method or re.search(r'\bmachine learning\b',title,re.I):
-        return AI_FAMILIES[0]
-    return AI_FAMILIES[3]
+def apply_decisions(papers: list[dict], envelope: dict) -> list[dict]:
+    if envelope.get('schema_version')!=SCHEMA or not isinstance(envelope.get('decisions'),list): raise ValueError('Invalid review decision file')
+    result=copy.deepcopy(papers); by_id={p['id']:p for p in result}; seen=set()
+    for decision in envelope['decisions']:
+        rid=decision.get('id','')
+        if rid not in by_id or rid in seen: raise ValueError('Unknown or duplicate review ID: '+rid)
+        seen.add(rid)
+        if decision.get('status') not in ('verified','excluded','candidate'): raise ValueError('Invalid review status')
+        if not str(decision.get('reviewer','')).strip() or not str(decision.get('reason','')).strip(): raise ValueError('Reviewer name and reason are required')
+        if decision.get('basis') not in CONFIG['review_bases']: raise ValueError('Review basis required')
+        stamp=str(decision.get('reviewed_on',''))
+        try: datetime.fromisoformat(stamp.replace('Z','+00:00'))
+        except ValueError as exc: raise ValueError('Valid review timestamp required') from exc
+        paper=by_id[rid]
+        paper.setdefault('review_history',[]).append(copy.deepcopy(decision))
+        paper['status']=decision['status']; paper['review']=copy.deepcopy(decision)
+    return result
 
-# Deliberately include broader subject queries to catch works that do not say "AI".
-SEARCHES = [
-    '"food safety" "machine learning"',
-    '"food safety" "deep learning"',
-    '"foodborne pathogen" detection',
-    '"mycotoxin" prediction',
-    '"pesticide residues" spectroscopy',
-    '"Salmonella" classification food',
-    '"food fraud" chemometrics',
-    '"food safety" inspection prediction',
-    '"aflatoxin" hyperspectral imaging',
-    '"foodborne" outbreak forecasting',
-    '"mass spectrometry" food authentication',
-    '"food safety" language models',
-    '"food safety" "large language model"',
-    '"food safety" "foundation model"',
-    '"food safety" "generative AI"',
-    '"food safety" "ChatGPT"',
-    '"foodborne" "language model"',
-    '"contaminants" "foundation model"',
-    '"food safety" "vision language model"',
-]
-FOOD = [r'food\s*safe',r'foodborne',r'contaminat',r'mycotoxin',r'aflatoxin',r'ochratoxin',r'fusarium',r'pesticide',r'veterinary residue',r'salmonella',r'listeria',r'e\. coli',r'escherichia coli',r'pathogen',r'food fraud',r'food authentic',r'adulterat',r'shellfish toxin',r'heavy metal',r'cadmium',r'dioxin',r'microplastic',r'food spoilage',r'food inspection']
-AI = [r'machine learning',r'deep learning',r'neural network',r'random forest',r'support vector',r'gradient boost',r'xgboost',r'artificial intelligence',r'computer vision',r'convolutional',r'transformer',r'large language model',r'foundation model',r'\bLLMs?\b',r'\bChatGPT\b',r'\bGPT[- ]?[345]\b',r'generative AI',r'vision.language model',r'chemometric',r'pattern recognition',r'partial least squares discriminant',r'bayesian network',r'predictive model',r'multivariate classification',r'YOLO\b',r'ResNet']
-
-def http_json(url, *, payload=None, api_key=None, retries=3):
-    global OPENALEX_REMAINING_CREDITS
-    headers={'User-Agent':'LivingAIFoodSafety/0.1 (noncommercial academic prototype)', 'Accept':'application/json'}
-    if payload is not None:
-        headers['Content-Type']='application/json'
-    if api_key:
-        headers['Authorization']='Bearer '+api_key
-    body=json.dumps(payload).encode() if payload is not None else None
-    for attempt in range(retries):
-        try:
-            with urlopen(Request(url, data=body, headers=headers), timeout=35) as r:
-                if url.startswith('https://api.openalex.org/works?'):
-                    remaining=r.headers.get('X-RateLimit-Remaining')
-                    if remaining is not None:
-                        OPENALEX_REMAINING_CREDITS=int(float(remaining))
-                return json.load(r)
-        except HTTPError as exc:
-            if exc.code in (429,500,502,503,504) and attempt+1<retries:
-                time.sleep(2**attempt*2)
-                continue
-            detail=exc.read(1000).decode('utf-8','replace')
-            raise RuntimeError(f'HTTP {exc.code}: {url.split("?")[0]}: {detail[:300]}') from exc
-        except (URLError,TimeoutError) as exc:
-            if attempt+1 < retries:
-                time.sleep(2**attempt*2)
-                continue
-            raise RuntimeError(f'Network error: {exc}') from exc
-
-def abstract_from_index(index):
-    if not isinstance(index,dict): return ''
-    terms=[]
-    for word,positions in index.items():
-        for pos in positions:
-            if isinstance(pos,int) and pos >= 0 and pos < 50000: terms.append((pos,word))
-    return ' '.join(w for _,w in sorted(terms))[:9000]
-
-def normalize_doi(value):
-    return re.sub(r'^https?://(dx\.)?doi\.org/', '', value or '',flags=re.I).strip().lower()
-
-def pick(text, rules, fallback):
-    for name,terms in rules:
-        if any(re.search(t,text,re.I) for t in terms): return name
-    return fallback
-
-def heuristic_classify(title,abstract,publication_type):
-    text=f'{title} {abstract}'.lower()
-    food_hits=sum(bool(re.search(p,text,re.I)) for p in FOOD)
-    ai_hits=sum(bool(re.search(p,text,re.I)) for p in AI)
-    # A heuristic priority score, explicitly NOT a calibrated probability.
-    score=round(min(0.97,0.12 + min(3,food_hits)*0.18 + min(3,ai_hits)*0.18),2)
-    is_review=bool(re.search(r'\breview\b|\bperspective\b|systematic|bibliometric',title,re.I)) or publication_type=='review'
-    domain=pick(text,[
-      ('Microbiological hazards',[r'salmonella',r'listeria',r'e\. coli',r'pathogen',r'bacteria',r'microbiol']),
-      ('Chemical hazards',[r'mycotoxin',r'aflatoxin',r'pesticide',r'heavy metal',r'cadmium',r'dioxin',r'microplastic',r'chemical contaminant']),
-      ('Foodborne illness',[r'foodborne outbreak',r'foodborne disease',r'food poisoning']),
-      ('Food fraud & authenticity',[r'food fraud',r'authentication',r'authenticity',r'adulterat']),
-    ],'General food safety')
-    app='Methods & perspectives' if is_review else pick(text,[
-      ('Inspection & enforcement',[r'inspection',r'compliance',r'border control']),
-      ('Risk forecasting',[r'forecast',r'predict.*risk',r'climate change',r'early warning',r'predict.*contaminat']),
-      ('Laboratory testing',[r'detect',r'microscop',r'quantif',r'spectroscop',r'screening']),
-      ('Risk factor analysis',[r'risk factor',r'source attribution',r'determinant']),
-    ],'Early warning')
-    dtype=pick(text,[
-      ('Mass spectrometry',[r'mass spectrom',r'lc.?ms',r'gc.?ms']),
-      ('Genomics & sequencing',[r'genom',r'sequence',r'metagenom']),
-      ('Spectroscopy',[r'spectroscop',r'raman',r'near.infrared',r'ftir']),
-      ('Imaging & microscopy',[r'hyperspectral imag',r'computer vision',r'microscop',r'imag']),
-      ('Sensors & biosensors',[r'biosensor',r'electronic nose',r'sensor']),
-      ('Monitoring & climate',[r'weather',r'climate',r'monitoring data']),
-      ('Text & reports',[r'natural language',r'news',r'report']),
-    ],'Literature & reviews' if is_review else 'Other')
-    method='Review / synthesis' if is_review else pick(text,[
-      ('LLMs / foundation models',FM_SIGNALS),
-      ('Deep learning',[r'deep learning',r'convolutional',r'neural network',r'transformer',r'\bcnn\b',r'YOLO',r'ResNet']),
-      ('Classical machine learning',[r'machine learning',r'random forest',r'support vector',r'chemometric',r'xgboost']),
-    ],'Other / unspecified')
-    relevance=food_hits>0 and ai_hits>0
-    return {'relevant':relevance,'score':score,'domain':domain,'application':app,'data_type':dtype,
-            'ai_method':method,'summary':'','reason':f'Keyword evidence: {food_hits} food-safety signals, {ai_hits} AI signals. Heuristic output requires validation.'}
-
-def llm_classify(title,abstract,publication_type):
-    key=os.getenv('OPENAI_API_KEY')
-    if not key: return None
-    model=os.getenv('OPENAI_MODEL','gpt-4.1-mini')
-    prompt=(
-       'Screen this TITLE/ABSTRACT for research about actual food safety hazards, contamination, food fraud or regulatory enforcement using AI/ML. '
-       'Do NOT include generic agriculture, food quality, food security, or nutrition with no explicit food-safety connection. '
-       'Return a JSON object ONLY with keys relevant (boolean), score (number 0-1, subjective not calibrated), domain, application, '
-       'data_type, ai_method, summary (one neutral <=35-word sentence paraphrasing only title/abstract), reason (brief). '
-       'Choose exactly one value per taxonomy. Classify LLMs/foundation models separately from general deep learning when central to the study; generic transformers alone are deep learning. Set no invented results, quantitative claims, authors, or methods. '
-       'If unclear mark relevant=false or score<0.65.\n'
-       f'Domains: {DOMAINS}\nApplications: {APPLICATIONS}\nData types: {DATATYPES}\nAI techniques: {AI_METHODS}\n'
-       f'Type: {publication_type}\nTITLE: {title[:800]}\nABSTRACT: {abstract[:6500]}'
-    )
-    payload={'model':model,'temperature':0,'response_format':{'type':'json_object'},
-        'messages':[{'role':'system','content':'You are a conservative, evidence-grounded scientific title/abstract screener. Output valid JSON only.'},
-                    {'role':'user','content':prompt}]}
-    result=http_json('https://api.openai.com/v1/chat/completions',payload=payload,api_key=key)
-    data=json.loads(result['choices'][0]['message']['content'])
-    for field,choices in [('domain',DOMAINS),('application',APPLICATIONS),('data_type',DATATYPES),('ai_method',AI_METHODS)]:
-        if data.get(field) not in choices: raise ValueError(f'Unexpected LLM taxonomy value for {field}: {data.get(field)}')
-    data['score']=max(0,min(1,float(data.get('score',0))))
-    data['relevant']=data.get('relevant') is True
-    data['summary']=str(data.get('summary') or '')[:360]
-    data['reason']=str(data.get('reason') or '')[:400]
-    return data
-
-def normalize_work(w):
-    doi=normalize_doi(w.get('doi'))
-    if not doi: return None
-    pub_date=w.get('publication_date') or ''
-    if not re.match(r'^\d{4}-\d{2}-\d{2}$',pub_date): return None
-    if pub_date>date.today().isoformat(): return None
-    if (w.get('language') not in (None,'en')): return None
-    if w.get('type') not in (None,'article','review'): return None
-    title=(w.get('title') or w.get('display_name') or '').strip()
-    if not title: return None
-    journal=((w.get('primary_location') or {}).get('source') or {}).get('display_name') or 'Unknown source'
-    authors=[(a.get('author') or {}).get('display_name') for a in w.get('authorships',[]) if (a.get('author') or {}).get('display_name')]
-    return {'id':'doi:'+doi,'doi':doi,'title':title,'authors':authors[:20],
-            'date':pub_date,'year':int(pub_date[:4]),'journal':journal,'url':'https://doi.org/'+doi,
-            'abstract':abstract_from_index(w.get('abstract_inverted_index')),
-            'publication_type':'Review' if w.get('type')=='review' else 'Research article',
-            'source':'OpenAlex','first_seen':date.today().isoformat(),'openalex_id':w.get('id','')}
-
-def year_windows(start_date,end_date):
-    """Inclusive yearly date partitions prevent recent records crowding out older years."""
-    current=date.fromisoformat(start_date)
-    last=date.fromisoformat(end_date)
-    if last<current: raise ValueError('Invalid date range')
-    while current<=last:
-        stop=min(last,date(current.year,12,31))
-        yield current.isoformat(),stop.isoformat()
-        current=stop+timedelta(days=1)
-
-
-def search_signature(start,per_query,max_pages):
-    definition=json.dumps({'start':start,'queries':SEARCHES,'per_query':per_query,'max_pages':max_pages},sort_keys=True)
-    return hashlib.sha256(definition.encode('utf-8')).hexdigest()[:16]
-
-
-def load_search_progress(signature):
-    if not PROGRESS.exists(): return None
-    try: saved=json.loads(PROGRESS.read_text(encoding='utf-8'))
-    except (ValueError,OSError): return None
-    return saved if saved.get('signature')==signature and saved.get('status')=='paused' else None
-
-
-def fetch_works(days,per_query,*,start_date=None,end_date=None,max_pages=1,max_requests=FREE_SEARCH_MAX_CALLS):
-    """Incrementally search by year, resuming from a durable page checkpoint.
-
-    Stops at a local maximum of $0.90 in search calls or near OpenAlex's
-    reported remaining credit limit. Returns all fetched works and progress.
-    The caller must persist its data and the checkpoint together.
-    """
-    key=os.getenv('OPENALEX_API_KEY','')
-    since=start_date or (date.today()-timedelta(days=days)).isoformat()
-    until=end_date or date.today().isoformat()
-    signature=search_signature(since,per_query,max_pages)
-    previous=load_search_progress(signature)
-    resume=(int(previous['year']),int(previous['query_index']),int(previous['page'])) if previous else None
-    found={}
-    warnings=[]
-    calls=0
-    for start,stop in year_windows(since,until):
-        year=int(start[:4])
-        if resume and year<resume[0]: continue
-        print(f'Searching {start}–{stop}',file=sys.stderr)
-        for i,query in enumerate(SEARCHES):
-            if resume and year==resume[0] and i<resume[1]: continue
-            first_page=resume[2] if resume and (year,i)==resume[:2] else 1
-            reported=None
-            for page in range(first_page,max_pages+1):
-                if calls>=max_requests or (OPENALEX_REMAINING_CREDITS is not None and OPENALEX_REMAINING_CREDITS<=100):
-                    position={'status':'paused','year':year,'query_index':i,'page':page,'signature':signature,
-                              'calls_this_run':calls,'last_checked':date.today().isoformat()}
-                    print(f'PAUSED: budget guard reached after {calls} calls; next: {year}, query {i+1}, page {page}',file=sys.stderr)
-                    return list(found.values()),position
-                params={'search.title_and_abstract':query,
-                        'filter':f'from_publication_date:{start},to_publication_date:{stop}',
-                        'per_page':per_query,'page':page,'sort':'publication_date:desc',
-                        'select':'id,doi,title,publication_date,language,type,authorships,primary_location,abstract_inverted_index'}
-                if key: params['api_key']=key
-                url='https://api.openalex.org/works?'+urlencode(params)
-                try:
-                    js=http_json(url)
-                except RuntimeError as err:
-                    if 'HTTP 429' not in str(err): raise
-                    position={'status':'paused','year':year,'query_index':i,'page':page,'signature':signature,
-                              'calls_this_run':calls,'last_checked':date.today().isoformat(),
-                              'note':'OpenAlex rate or daily budget limit reached'}
-                    print(f'PAUSED: OpenAlex 429; resume next run from {year}, query {i+1}, page {page}',file=sys.stderr)
-                    return list(found.values()),position
-                calls+=1
-                batch=js.get('results',[])
-                for work in batch:
-                    doc=normalize_work(work)
-                    if doc: found[doc['id']]=doc
-                reported=js.get('meta',{}).get('count')
-                if len(batch)<per_query or (isinstance(reported,int) and page*per_query>=reported): break
-                if page==max_pages:
-                    warnings.append(f'{year}: {query} (OpenAlex count {reported}; only {max_pages} pages retrieved)')
-                time.sleep(0.14)
-            print(f'  [{i+1}/{len(SEARCHES)}] {query}: through page {page} ({year})',file=sys.stderr)
-        resume=None
-    for warning in warnings:
-        print('COVERAGE WARNING: '+warning,file=sys.stderr)
-    position={'status':'completed','signature':signature,'calls_this_run':calls,'last_checked':date.today().isoformat(),
-              'coverage_warnings':warnings}
-    print(f'Completed date-range search after {calls} calls, {len(found)} unique DOI works',file=sys.stderr)
-    return list(found.values()),position
-
-
-def make_digest(papers):
-    active=[p for p in papers if p.get('screening',{}).get('status')!='excluded']
-    last_month=(date.today()-timedelta(days=30)).isoformat()
-    new=[p for p in active if p.get('first_seen','')>=last_month]
-    by_domain=Counter(p.get('domain','Other') for p in new)
-    highlights=sorted(new,key=lambda p:(p.get('date',''),p.get('title','')),reverse=True)[:5]
-    return {'generated_on':date.today().isoformat(),'new_last_30_days':len(new),
-            'domains':dict(by_domain),'recent_ids':[p['id'] for p in highlights],
-            'caveat':'Counts reflect ingestion into this prototype, not all papers published in the period.'}
-
-def write_json_and_js(name, data, variable):
-    path=ROOT/'data'/name
-    payload=json.dumps(data,indent=2,ensure_ascii=False)+'\n'
-    path.write_text(payload,encoding='utf-8')
-    (ROOT/'data'/name.replace('.json','.js')).write_text('window.'+variable+' = '+json.dumps(data,separators=(',',':'),ensure_ascii=False)+';\n',encoding='utf-8')
+def year_windows(start: str,end: str):
+    first=date.fromisoformat(start); last=date.fromisoformat(end)
+    while first<=last:
+        stop=min(last,date(first.year,12,31))
+        yield first.isoformat(),stop.isoformat()
+        first=stop+timedelta(days=1)
 
 def main(argv=None):
     arg=argparse.ArgumentParser(description=__doc__)
-    arg.add_argument('--days',type=int,default=None,help='Optional rolling lookback; normally the full period since 2024 is searched')
-    arg.add_argument('--start-date',default='2024-01-01',help='Inclusive start date (default: 2024-01-01)')
-    arg.add_argument('--end-date',default=None,help='Inclusive end date (default: today)')
-    arg.add_argument('--max-pages',type=int,default=8,help='Maximum pages per year and query (default 8)')
-    arg.add_argument('--per-query',type=int,default=100,help='Works per result page (1-100)')
-    arg.add_argument('--dry-run',action='store_true',help='Run without modifying data files')
-    a=arg.parse_args(argv)
-    if not 1<=a.per_query<=100 or not 1<=a.max_pages<=30 or (a.days is not None and a.days<1):
-        arg.error('Invalid per-query, max-pages or days')
+    arg.add_argument('--root',type=Path,default=ROOT)
+    arg.add_argument('--provider',choices=['europepmc','openalex','all'],default='europepmc')
+    arg.add_argument('--days',type=int,default=120)
+    arg.add_argument('--start-date')
+    arg.add_argument('--as-of',default=date.today().isoformat())
+    arg.add_argument('--max-pages',type=int,default=3)
+    arg.add_argument('--page-size',type=int,default=100)
+    arg.add_argument('--query-id',action='append')
+    arg.add_argument('--input',type=Path,help='Import normalized provider records (offline, not a live search)')
+    arg.add_argument('--decisions',type=Path)
+    arg.add_argument('--dry-run',action='store_true')
+    arg.add_argument('--require-complete',action='store_true')
+    arg.add_argument('--llm',action='store_true',help='Optional model suggestions; never automatic inclusion')
+    arg.add_argument('--llm-max-records',type=int,default=50,help='Maximum new candidates sent to the optional paid API per run')
+    args=arg.parse_args(argv)
     try:
-        if a.days is not None:
-            a.start_date=(date.today()-timedelta(days=a.days)).isoformat()
-        first=date.fromisoformat(a.start_date)
-        last=date.fromisoformat(a.end_date) if a.end_date else date.today()
-    except ValueError: arg.error('Dates must be YYYY-MM-DD')
-    if last<first or last>date.today(): arg.error('Invalid publication-date interval')
-    a.end_date=last.isoformat()
-    old=json.loads(DB.read_text(encoding='utf-8')) if DB.exists() else {'meta':{},'papers':[]}
-    existing={p['id']:p for p in old['papers']}
-    overrides_file=ROOT/'data'/'review_overrides.json'
-    overrides=json.loads(overrides_file.read_text(encoding='utf-8')) if overrides_file.exists() else {}
-    print(f'Retrieving all publication years {a.start_date} through {a.end_date}…',file=sys.stderr)
-    works, progress=fetch_works(a.days or 0,a.per_query,start_date=a.start_date,end_date=a.end_date,max_pages=a.max_pages)
-    added=0; queued=[]; dropped=0
-    for doc in works:
-        if doc['id'] in existing: continue
-        title,abstract=doc['title'],doc['abstract']
-        heur=heuristic_classify(title,abstract,doc['publication_type'])
-        if not heur['relevant']:
-            dropped+=1
-            continue
-        method='heuristic'
-        output=heur
-        if os.getenv('OPENAI_API_KEY'):
-            try:
-                output=llm_classify(title,abstract,doc['publication_type'])
-                method='llm'
-            except Exception as exc:
-                print(f'  LLM failed on {doc["doi"]}: {exc} — using heuristic',file=sys.stderr)
-        if not output['relevant'] or output['score']<0.65:
-            queued.append({'id':doc['id'],'title':title,'doi':doc['doi'],'score':output['score'],'reason':output['reason']})
-            continue
-        doc.update({k:output[k] for k in ('domain','application','data_type','ai_method')})
-        doc['ai_family']=family_from_record(doc)
-        doc['source_group']='automated_candidate'
-        doc['summary']=output.get('summary') or ('Automated candidate identified from title and abstract. Open the source to assess the study.')
-        doc['screening']={'status':'automated_candidate','confidence':output['score'],
-                          'reason':output['reason'],'classification_method':method}
-        existing[doc['id']]=doc
-        added+=1
-    for id_or_doi, override in overrides.items():
-        key=(id_or_doi if id_or_doi in existing else id_or_doi if id_or_doi.startswith('doi:') else 'doi:'+normalize_doi(id_or_doi))
-        if key not in existing: continue
-        paper=existing[key]
-        if override.get('status') in ('verified','excluded','needs_review'):
-            paper.setdefault('screening',{})['status']=override['status']
-        for field,valid in [('domain',DOMAINS),('application',APPLICATIONS),('data_type',DATATYPES),('ai_method',AI_METHODS)]:
-            if override.get(field) in valid: paper[field]=override[field]
-        if 'summary' in override and isinstance(override['summary'],str): paper['summary']=override['summary'][:500]
-    for paper in existing.values():
-        paper['ai_family']=family_from_record(paper)
-    papers=sorted(existing.values(),key=lambda p:(p.get('date',''),p['id']),reverse=True)
-    payload={'meta':{'mode':'automated_candidates','title':'Living AI for Food Safety','updated_at':datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                     'note':'Automated candidate evidence map; not a validated systematic review. Publication-date search may miss delayed indexing.',
-                     'original_review_doi':'10.1038/s41538-026-00925-1',
-                     'source':'OpenAlex title/abstract search + optional LLM classification',
-                     'retrieved':len(works),'new_candidates':added,'review_queue':len(queued),
-                     'lookback_days':a.days,
-                     'search_start':a.start_date,'search_end':a.end_date,'max_pages':a.max_pages,
-                     'search_progress':progress,
-                     'query_count':len(SEARCHES),'llm_enabled':bool(os.getenv('OPENAI_API_KEY'))},
-              'papers':papers}
-    print(f'Retrieved={len(works)}, added={added}, queued={len(queued)}, basic-screen rejected={dropped}, total={len(papers)}',file=sys.stderr)
-    if not a.dry_run:
-        write_json_and_js('papers.json',payload,'LIVING_REVIEW_DATA')
-        write_json_and_js('digest.json',make_digest(papers),'LIVING_REVIEW_DIGEST')
-        (ROOT/'data'/'review_queue.json').write_text(json.dumps(queued,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-        PROGRESS.write_text(json.dumps(progress,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-    return 0
+        end=date.fromisoformat(args.as_of)
+        if not 1<=args.llm_max_records<=1000: raise ValueError('LLM record budget must be 1–1000')
+        if args.llm and (not os.getenv('OPENAI_API_KEY') or not os.getenv('OPENAI_MODEL')): raise ValueError('--llm requires OPENAI_API_KEY and OPENAI_MODEL')
+        if not 1<=args.days<=36525 or not 1<=args.max_pages<=100 or not 1<=args.page_size<=100: raise ValueError('Invalid retrieval bounds')
+        start=date.fromisoformat(args.start_date) if args.start_date else end-timedelta(days=args.days)
+        if start>end: raise ValueError('Start date exceeds end date')
+        data_path=args.root/'data/papers.json'
+        original=read_json(data_path,{'schema_version':SCHEMA,'meta':{},'papers':[]})
+        validate_dataset(original)
+        data=copy.deepcopy(original); reports=[]; incoming=[]
+        searches=read_json(args.root/'config/searches.json',[])
+        if args.query_id:
+            unknown=set(args.query_id)-{q['id'] for q in searches}
+            if unknown: raise ValueError('Unknown query IDs: '+','.join(unknown))
+            searches=[q for q in searches if q['id'] in args.query_id]
+        if args.input:
+            incoming=read_json(args.input)
+            if isinstance(incoming,dict): incoming=incoming['papers']
+            reports=[{'provider':'offline_import','count':len(incoming),'truncated':False,'file_name':args.input.name}]
+        elif not args.decisions:
+            providers=['europepmc','openalex'] if args.provider=='all' else [args.provider]
+            windows=list(year_windows(start.isoformat(),end.isoformat())) if args.start_date else [(start.isoformat(),end.isoformat())]
+            for provider in providers:
+                for left,right in windows:
+                    for query in searches:
+                        records,report=fetch_query(provider,query,left,right,mode='historical' if args.start_date else 'incremental',max_pages=args.max_pages,page_size=args.page_size)
+                        incoming.extend(records); reports.append(report)
+                        print(f'{provider}/{query["id"]}: {report["retrieved"]}/{report["reported_matches"]}, truncated={report["truncated"]}')
+        if args.require_complete and any(r.get('truncated') or r.get('invalid_records') for r in reports): raise RetrievalError('Incomplete retrieval; no dataset changes committed')
+        data['papers']=merge_records(data['papers'],incoming)
+        if args.llm:
+            from .llm import suggest
+            old_ids={p['id'] for p in original['papers']}
+            new=[p for p in data['papers'] if p['id'] not in old_ids]
+            for p in new[:args.llm_max_records]: suggest(p)
+            print(f'LLM suggestions: {min(len(new),args.llm_max_records)}/{len(new)} new records; remaining candidates retain keyword suggestions')
+        if args.decisions: data['papers']=apply_decisions(data['papers'],read_json(args.decisions))
+        now=datetime.now(timezone.utc).isoformat()
+        report={'schema_version':SCHEMA,'run_at':now,'as_of':end.isoformat(),'run_type':'review_import' if args.decisions and not args.input else 'offline_import' if args.input else 'live_search','classifier_version':VERSION,'search_config_sha256':fingerprint(searches),'queries':reports,'new_records':len(data['papers'])-len(original['papers']),'warnings':[f'{r.get("provider")}/{r.get("query_id")}: result cap reached' for r in reports if r.get('truncated')], 'complete_within_queries':not any(r.get('truncated') or r.get('invalid_records') for r in reports)}
+        data['meta']['last_operation']=report
+        if not args.input and not args.decisions: data['meta']['last_search']=report
+        validate_dataset(data)
+        # Nothing is written until every retrieval, decision and validation succeeds.
+        if not args.dry_run:
+            run_name=now.replace(':','-')+'-'+report['run_type']+'.json'
+            write_json(args.root/'data/search_runs'/run_name,report)
+            write_json(data_path,data)
+        print(json.dumps({'new_records':report['new_records'],'total':len(data['papers']),'dry_run':args.dry_run,'run_type':report['run_type']}))
+        return 0
+    except (ValueError,KeyError,TypeError,RetrievalError,OSError,json.JSONDecodeError) as exc:
+        print(f'ERROR: {exc}',file=sys.stderr)
+        return 1
 
 if __name__=='__main__': raise SystemExit(main())

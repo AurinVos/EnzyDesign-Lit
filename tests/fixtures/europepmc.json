@@ -1,0 +1,15 @@
+{
+  "id": "12345",
+  "source": "MED",
+  "doi": "10.1234/FIXTURE",
+  "title": "Fixture enzyme discovery candidate",
+  "authorString": "Fixture Author",
+  "firstPublicationDate": "2026-01-02",
+  "pubYear": "2026",
+  "abstractText": "A synthetic test record for machine learning enzyme discovery.",
+  "journalInfo": {
+    "journal": {
+      "title": "Test fixture, not a journal"
+    }
+  }
+}

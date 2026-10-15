@@ -1,0 +1,19 @@
+{
+  "id": "https://openalex.org/W12345",
+  "doi": "https://doi.org/10.1234/fixture",
+  "title": "Fixture enzyme discovery candidate",
+  "publication_date": "2026-01-02",
+  "publication_year": 2026,
+  "authorships": [],
+  "primary_location": {
+    "source": null
+  },
+  "abstract_inverted_index": {
+    "Fixture": [
+      0
+    ],
+    "abstract": [
+      1
+    ]
+  }
+}

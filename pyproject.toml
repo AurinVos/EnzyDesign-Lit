@@ -1,0 +1,10 @@
+[project]
+name = "enzyme-evidence-atlas"
+version = "0.1.0"
+description = "Source-linked literature map for enzyme discovery, engineering and design"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[tool.ruff]
+line-length = 120

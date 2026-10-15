@@ -1,0 +1,56 @@
+name: Publish evidence map
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agent/**'
+      - 'assets/**'
+      - 'data/**'
+      - 'config/**'
+      - 'LICENSE'
+      - 'NOTICE.md'
+      - '.github/workflows/publish.yml'
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: enzyme-evidence-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: vars.PUBLISH_PAGES == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # A reusable call after the updater must read the newly committed data.
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m unittest discover -s tests -t . -v
+      - run: node --check assets/app.js
+      - run: python -m agent.render_static
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: vars.PUBLISH_PAGES == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated site
+        id: deployment
+        uses: actions/deploy-pages@v4

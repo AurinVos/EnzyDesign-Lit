@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+_site/
+reports/*-preview.png
+reports/browser-downloads/
+reports/browser-smoke.json
+reports/unit-tests.txt
+.env
+.env.*
+!.env.example

@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Enzyme Evidence Atlas",
+  "description": "A living literature map for enzyme discovery, engineering and design.",
+  "upstream": {"author": "Bas van der Velden", "repository": "https://github.com/basvandervelden/ai_food_safety_review", "website": "https://basvandervelden.github.io/ai_food_safety_review/", "license": "MIT", "inspected_tree": "7f5e52234f8d97912aefa774332cff8435b17870", "inspected_on": "2026-10-15"},
+  "objectives": {
+    "Discovery": "Identifying previously unknown enzyme–function relationships in natural or non-natural sequence space.",
+    "Engineering": "Modifying an existing enzyme or scaffold to change its measured properties.",
+    "Design": "Specifying or constructing sequences, structures or active sites intended to deliver a desired function."
+  },
+  "methods": ["Experimental screening", "Bioinformatics / genome mining", "Directed evolution", "Machine learning", "Protein language models", "Structure-based design", "Molecular simulation", "Generative models", "Active learning", "Agentic workflows"],
+  "sequence_spaces": ["Natural", "Engineered variants", "De novo / generated", "Mixed / general", "Not assessed"],
+  "validation_levels": ["Experimental assays reported", "Computational evaluation", "Review / perspective", "Not assessed"],
+  "review_statuses": ["curated", "candidate", "verified", "excluded"],
+  "review_bases": ["title_abstract", "full_text"],
+  "note": "Objective labels are non-exclusive, operational research objectives, not a universal ontology. Method and evidence labels are separate. Counts describe this indexed collection, never field-wide prevalence."
+}

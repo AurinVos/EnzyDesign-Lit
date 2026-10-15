@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please acknowledge Enzyme Evidence Atlas and the upstream Living AI for Food Safety project by Bas van der Velden. Cite individual publications for scientific claims."
+title: "Enzyme Evidence Atlas: discovery, engineering and design"
+type: software
+version: 0.1.0
+date-released: 2026-10-15
+license: MIT
+authors:
+  - name: "Enzyme Evidence Atlas contributors"
+references:
+  - type: software
+    title: "Living AI for Food Safety"
+    authors:
+      - family-names: "van der Velden"
+        given-names: "Bas"
+    repository-code: "https://github.com/basvandervelden/ai_food_safety_review"
+    url: "https://basvandervelden.github.io/ai_food_safety_review/"
+    license: MIT

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "discovery",
+    "europepmc": "TITLE_ABS:(\"enzyme discovery\" OR \"enzyme mining\" OR \"enzyme function prediction\" OR \"enzyme annotation\")",
+    "openalex": "enzyme discovery"
+  },
+  {
+    "id": "engineering",
+    "europepmc": "TITLE_ABS:(\"enzyme engineering\" OR \"enzyme evolution\" OR \"enzyme redesign\")",
+    "openalex": "enzyme engineering"
+  },
+  {
+    "id": "design",
+    "europepmc": "TITLE_ABS:(\"enzyme design\" OR \"de novo enzyme\" OR \"catalytic motif\" OR \"artificial enzyme\")",
+    "openalex": "enzyme design"
+  },
+  {
+    "id": "metagenomics",
+    "europepmc": "TITLE_ABS:((enzyme OR biocatalyst) AND (metagenom* OR \"genome mining\"))",
+    "openalex": "metagenomic enzyme"
+  },
+  {
+    "id": "language-models",
+    "europepmc": "TITLE_ABS:((enzyme OR cataly* OR lysozyme) AND (\"language model\" OR \"foundation model\" OR \"generative model\"))",
+    "openalex": "enzyme language model"
+  },
+  {
+    "id": "active-learning",
+    "europepmc": "TITLE_ABS:((enzyme OR \"protein engineering\") AND (\"active learning\" OR \"Bayesian optimization\" OR \"self-driving\"))",
+    "openalex": "enzyme active learning"
+  },
+  {
+    "id": "terpene-synthases",
+    "europepmc": "TITLE_ABS:((\"terpene synthase\" OR \"sesquiterpene synthase\" OR \"terpene cyclase\") AND (discover* OR engineer* OR design* OR screen* OR characteriz*))",
+    "openalex": "terpene synthase"
+  },
+  {
+    "id": "p450",
+    "europepmc": "TITLE_ABS:((\"cytochrome P450\" OR monooxygenase) AND (\"enzyme engineering\" OR \"directed evolution\" OR \"biosynthetic pathway\" OR discover*))",
+    "openalex": "cytochrome P450"
+  },
+  {
+    "id": "transferases",
+    "europepmc": "TITLE_ABS:((BAHD OR acyltransferase OR glycosyltransferase) AND (discover* OR engineer* OR design* OR characteriz*))",
+    "openalex": "acyltransferase"
+  },
+  {
+    "id": "biocatalysis",
+    "europepmc": "TITLE_ABS:((biocatalyst OR biocatalysis) AND (discover* OR engineer* OR design* OR \"directed evolution\"))",
+    "openalex": "biocatalysis"
+  }
+]

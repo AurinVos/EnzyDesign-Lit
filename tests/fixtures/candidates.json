@@ -1,0 +1,49 @@
+[
+  {
+    "id": "doi:10.1234/fixture",
+    "doi": "10.1234/fixture",
+    "title": "Fixture enzyme discovery candidate",
+    "year": 2026,
+    "published_date": "2026-01-02",
+    "date_precision": "day",
+    "citation": "Fixture Author",
+    "journal": "Test fixture, not a journal",
+    "abstract": "A synthetic test record for machine learning enzyme discovery.",
+    "summary": "Retrieved bibliographic candidate; relevance and findings require review.",
+    "source_url": "https://europepmc.org/article/MED/12345",
+    "first_seen": "2026-10-15",
+    "checked_on": "",
+    "record_type": "Research article",
+    "provenance": [
+      {
+        "source": "Europe PMC MED",
+        "id": "12345",
+        "url": "https://europepmc.org/article/MED/12345",
+        "retrieved_on": "2026-10-15",
+        "basis": "provider_metadata",
+        "date_note": "Europe PMC firstPublicationDate can contain provider-normalized dates; date precision is source-reported, not independently verified."
+      }
+    ],
+    "resource_links": [],
+    "related_ids": [],
+    "targets": [],
+    "evidence_note": "Experimental validation has not been assessed.",
+    "provider_types": [],
+    "first_index_date": "",
+    "objectives": [
+      "Discovery"
+    ],
+    "methods": [
+      "Machine learning"
+    ],
+    "enzyme_families": [],
+    "sequence_space": "Not assessed",
+    "validation": "Not assessed",
+    "status": "candidate",
+    "classification": {
+      "method": "rules-1.0.0",
+      "basis": "title_abstract",
+      "note": "Keyword suggestions only. No relevance exclusion and no assay validation inferred."
+    }
+  }
+]

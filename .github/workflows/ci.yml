@@ -1,0 +1,32 @@
+name: Validate and build
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit and fixture integration tests (no external APIs)
+        run: python -m unittest discover -s tests -t . -v
+      - name: Check browser JavaScript syntax
+        run: node --check assets/app.js
+      - name: Build static and self-contained versions
+        run: python -m agent.render_static
+      - name: Retain site build for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: enzyme-evidence-site
+          path: _site
+          retention-days: 14

@@ -1,0 +1,66 @@
+name: Refresh enzyme literature
+on:
+  schedule:
+    - cron: '15 7 * * 1' # Monday 07:15 UTC; GitHub may delay scheduled starts.
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: 'Retrieval source (OpenAlex requires a repository secret)'
+        type: choice
+        options: [europepmc, openalex, all]
+        default: europepmc
+      start_date:
+        description: 'Optional historical backfill start, YYYY-MM-DD. Empty = 120-day lookback.'
+        type: string
+        required: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: enzyme-evidence-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: vars.ENABLE_REFRESH == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve new records as candidates
+        env:
+          PROVIDER: ${{ inputs.provider || 'europepmc' }}
+          START_DATE: ${{ inputs.start_date }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        shell: bash
+        run: |
+          args=(--provider "$PROVIDER" --days 120 --max-pages 3 --page-size 100)
+          if [ -n "${START_DATE:-}" ]; then args+=(--start-date "$START_DATE"); fi
+          python -m agent.update "${args[@]}"
+      - name: Validate and render before committing
+        run: |
+          python -m unittest discover -s tests -t . -v
+          node --check assets/app.js
+          python -m agent.render_static
+      - name: Commit only generated evidence outputs
+        run: |
+          git config user.name 'enzyme-evidence-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/papers.json data/papers.js data/papers.csv data/search_runs index.html Enzyme_Evidence_Atlas.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh enzyme literature candidates and provenance'
+            git push origin HEAD:${{ github.event.repository.default_branch }}
+          fi
+  publish:
+    if: needs.refresh.result == 'success' && vars.PUBLISH_PAGES == 'true'
+    needs: refresh
+    # Explicit reusable deployment: commits by GITHUB_TOKEN do not trigger builds.
+    uses: ./.github/workflows/publish.yml
