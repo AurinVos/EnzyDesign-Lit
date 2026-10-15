@@ -79,7 +79,7 @@
         <div class="stat-grid">
           <div class="stat-card"><div class="stat-icon lilac"><svg><use href="#i-book"></use></svg></div><div><strong id="stat-papers">239</strong><span>indexed publications</span><small>In this collection</small></div></div>
           <div class="stat-card"><div class="stat-icon blush"><svg><use href="#i-database"></use></svg></div><div><strong id="stat-domains">5</strong><span>research domains</span><small>Food safety taxonomy</small></div></div>
-          <div class="stat-card"><div class="stat-icon mint"><svg><use href="#i-spark"></use></svg></div><div><strong id="stat-methods">7</strong><span>AI approaches</span><small>Methods represented</small></div></div>
+          <div class="stat-card"><div class="stat-icon mint"><svg><use href="#i-spark"></use></svg></div><div><strong id="stat-methods">3</strong><span>core AI families</span><small>ML · DL · LLMs / foundation models</small></div></div>
           <div class="stat-card"><div class="stat-icon warm"><svg><use href="#i-chart"></use></svg></div><div><strong id="stat-latest">2026</strong><span>latest publication year</span><small>Indexed publication dates</small></div></div>
         </div>
         <div class="caution-strip"><svg><use href="#i-info"></use></svg><span id="collection-disclaimer">166 distinct records: 160 unique studies in the 161 published review table entries, plus six more recent papers. The new papers are not included in the original review.</span><a href="#methodology">About the dataset <svg><use href="#i-arrow"></use></svg></a></div>
@@ -91,7 +91,8 @@
           <aside class="filters-panel"><div class="filters-title"><span><svg><use href="#i-filter"></use></svg> Filters</span><button id="reset-filters">Reset all</button></div>
             <label for="collection-filter">Collection</label><select id="collection-filter"><option value="">All collections</option></select>
             <label for="domain-filter">Food safety domain</label><select id="domain-filter"><option value="">All domains</option></select>
-            <label for="method-filter">AI approach</label><select id="method-filter"><option value="">All approaches</option></select>
+            <label for="family-filter">AI family</label><select id="family-filter"><option value="">All AI families</option></select>
+            <label for="method-filter">AI approach (detailed)</label><select id="method-filter"><option value="">All approaches</option></select>
             <label for="app-filter">Application context</label><select id="app-filter"><option value="">All applications</option></select>
             <label for="data-filter">Data collection</label><select id="data-filter"><option value="">All data types</option></select>
             <div class="filter-divider"></div>
@@ -1796,14 +1797,11 @@
 <div class="bar-item"><div class="bar-label"><span>Food fraud &amp; authenticity</span><span>47 papers</span></div><div class="track"><div class="fill" style="width:63.51%"></div></div></div>
 <div class="bar-item"><div class="bar-label"><span>Foodborne illness</span><span>10 papers</span></div><div class="track"><div class="fill" style="width:13.51%"></div></div></div>
 <!-- SSR:domain-bars:end --></div><div class="chart-bottom">One primary domain per record, assigned provisionally.</div></article>
-            <article class="insight-card method-card"><div class="chart-title"><div><h3>AI approaches</h3><p>Methods represented in the collection</p></div><span class="chart-icon"><svg><use href="#i-spark"></use></svg></span></div><div id="method-bars" class="method-bars"><!-- SSR:method-bars:start -->
-<div class="bar-item"><div class="bar-label"><span>Classical machine learning</span><span>137 papers</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div></div>
-<div class="bar-item"><div class="bar-label"><span>Deep learning</span><span>84 papers</span></div><div class="track"><div class="fill" style="width:61.31%"></div></div></div>
-<div class="bar-item"><div class="bar-label"><span>Review / synthesis</span><span>9 papers</span></div><div class="track"><div class="fill" style="width:6.57%"></div></div></div>
-<div class="bar-item"><div class="bar-label"><span>Other / unspecified</span><span>6 papers</span></div><div class="track"><div class="fill" style="width:4.38%"></div></div></div>
+            <article class="insight-card method-card"><div class="chart-title"><div><h3>AI technology families</h3><p>ML, DL, LLMs / foundation models and other / mixed</p></div><span class="chart-icon"><svg><use href="#i-spark"></use></svg></span></div><div id="method-bars" class="method-bars"><!-- SSR:method-bars:start -->
+<div class="bar-item"><div class="bar-label"><span>Machine learning (ML)</span><span>137 papers</span></div><div class="track"><div class="fill" style="width:100.00%"></div></div></div>
+<div class="bar-item"><div class="bar-label"><span>Deep learning (DL)</span><span>85 papers</span></div><div class="track"><div class="fill" style="width:62.04%"></div></div></div>
 <div class="bar-item"><div class="bar-label"><span>LLMs / foundation models</span><span>1 paper</span></div><div class="track"><div class="fill" style="width:3.00%"></div></div></div>
-<div class="bar-item"><div class="bar-label"><span>Hybrid / ensemble</span><span>1 paper</span></div><div class="track"><div class="fill" style="width:3.00%"></div></div></div>
-<div class="bar-item"><div class="bar-label"><span>Not specified</span><span>1 paper</span></div><div class="track"><div class="fill" style="width:3.00%"></div></div></div>
+<div class="bar-item"><div class="bar-label"><span>Other / mixed</span><span>16 papers</span></div><div class="track"><div class="fill" style="width:11.68%"></div></div></div>
 <!-- SSR:method-bars:end --></div><div class="chart-bottom">Review papers are grouped as synthesis, not as an implemented model.</div></article>
             <article class="insight-card briefing-card"><div class="briefing-head"><div class="briefing-label"><svg><use href="#i-spark"></use></svg> LITERATURE PULSE</div><span id="digest-date">Preview</span></div><h3>What’s new in the evidence map?</h3><p id="digest-intro">A short overview generated from publication metadata, without speculative claims.</p><div id="digest-list" class="digest-list"><!-- SSR:digest-list:start -->
 <div class="digest-entry"><span class="bullet"></span><a href="https://doi.org/10.3390/foods15203640" target="_blank" rel="noopener noreferrer">A Machine Learning Approach to Predict Listeria monocytogenes Growth by Integrating FSSP and PMP Simulations: A Focus on t100 as a Possible Endpoint Parameters for Predictive Models</a></div><div class="digest-entry"><span class="bullet"></span><a href="https://doi.org/10.22219/kinetik.v11i4.2776" target="_blank" rel="noopener noreferrer">Detection of Diseased Salmon Through Advanced Image Processing and Comparative Model Evaluation</a></div><div class="digest-entry"><span class="bullet"></span><a href="https://doi.org/10.5296/ijssr.v14i3.24090" target="_blank" rel="noopener noreferrer">An Artificial Intelligence Framework for Food Supply Chain Management: Policy Implications for UAE Public-Sector Agricultural Authorities</a></div>
