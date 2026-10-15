@@ -105,23 +105,16 @@
     "reason": "Keyword evidence: 1 food-safety signals, 1 AI signals. Heuristic output requires validation."
   },
   {
-    "id": "doi:10.3390/foods15162916",
-    "title": "Can ChatGPT Reflect Professional HACCP Judgments? A Comparative Study in Hospitality Food Safety",
-    "doi": "10.3390/foods15162916",
+    "id": "doi:10.3390/foods15193420",
+    "title": "Generative and Foundation-Model Artificial Intelligence in Food Safety Analysis, Authenticity Identification, and Quality Control: A Systematic Review of Validation and Decision Readiness",
+    "doi": "10.3390/foods15193420",
     "score": 0.48,
     "reason": "Keyword evidence: 1 food-safety signals, 1 AI signals. Heuristic output requires validation."
   },
   {
-    "id": "doi:10.1186/s12302-026-01472-y",
-    "title": "Developing a FAIR data policy for chemical risk assessment and exploring future topics and stakeholder interests with large language models and data sciences",
-    "doi": "10.1186/s12302-026-01472-y",
-    "score": 0.48,
-    "reason": "Keyword evidence: 1 food-safety signals, 1 AI signals. Heuristic output requires validation."
-  },
-  {
-    "id": "doi:10.1016/j.yrtph.2026.106182",
-    "title": "Automated extraction of toxicological mechanism of action from PubMed literature using Large Language Models",
-    "doi": "10.1016/j.yrtph.2026.106182",
+    "id": "doi:10.5281/zenodo.23212452",
+    "title": "Paying for Nutrition: A Mechanism-Design Approach to the Nutrient Density Standard",
+    "doi": "10.5281/zenodo.23212452",
     "score": 0.48,
     "reason": "Keyword evidence: 1 food-safety signals, 1 AI signals. Heuristic output requires validation."
   }

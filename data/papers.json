@@ -2,15 +2,15 @@
   "meta": {
     "mode": "automated_candidates",
     "title": "Living AI for Food Safety",
-    "updated_at": "2026-10-15T12:14:40Z",
+    "updated_at": "2026-10-15T12:29:39Z",
     "note": "Automated candidate evidence map; not a validated systematic review. Publication-date search may miss delayed indexing.",
     "original_review_doi": "10.1038/s41538-026-00925-1",
     "source": "OpenAlex title/abstract search + optional LLM classification",
-    "retrieved": 232,
-    "new_candidates": 73,
-    "review_queue": 18,
+    "retrieved": 239,
+    "new_candidates": 5,
+    "review_queue": 17,
     "lookback_days": 90,
-    "query_count": 12,
+    "query_count": 19,
     "llm_enabled": false
   },
   "papers": [
@@ -47,7 +47,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 5 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.22219/kinetik.v11i4.2776",
@@ -79,7 +80,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.5296/ijssr.v14i3.24090",
@@ -109,7 +111,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/foods15203624",
@@ -142,7 +145,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 5 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1080/03067319.2026.2742467",
@@ -172,7 +176,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 5 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1007/s42452-026-09664-0",
@@ -206,7 +211,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.ccr.2026.218623",
@@ -239,7 +245,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.jfca.2026.109567",
@@ -269,7 +276,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1128/asmfm.00014-26",
@@ -302,7 +310,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.3390/app16199820",
@@ -334,7 +343,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 4 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1088/2631-8695/aeafb7",
@@ -364,7 +374,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.62638/zasmat1924",
@@ -397,7 +408,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.3390/foods15193520",
@@ -432,7 +444,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 4 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1163/18750796-bja10053",
@@ -468,7 +481,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 6 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1016/j.jfca.2026.109583",
@@ -508,7 +522,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.17642/jcc.31.3.8",
@@ -538,7 +553,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 4 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.microc.2026.119867",
@@ -573,7 +589,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.jfp.2026.100934",
@@ -606,7 +623,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 6 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.jhazmat.2026.143771",
@@ -640,7 +658,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1016/j.biosx.2026.100846",
@@ -673,7 +692,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.3390/app16199578",
@@ -704,7 +724,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1080/19440049.2026.2729045",
@@ -734,7 +755,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.fufo.2026.101202",
@@ -768,7 +790,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1007/s44338-026-00259-y",
@@ -798,7 +821,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.22037/ijmtfm.v16.53178",
@@ -832,7 +856,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1080/87559129.2026.2734791",
@@ -871,7 +896,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.3390/chemosensors14090211",
@@ -903,7 +929,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 6 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/toxins18090396",
@@ -937,7 +964,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 5 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.3390/foods15183273",
@@ -972,7 +1000,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 2 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.22270/ujpr.v11i4.1635",
@@ -1001,7 +1030,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1128/asmfm.00006-26",
@@ -1032,7 +1062,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 4 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.31572/inotera.vol11.iss2.2026.id732",
@@ -1062,6 +1093,37 @@
         "status": "automated_candidate",
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 5 AI signals. Heuristic output requires validation.",
+        "classification_method": "heuristic"
+      },
+      "ai_family": "Deep learning (DL)"
+    },
+    {
+      "id": "doi:10.14445/22312803/ijctt-v74i8p103",
+      "doi": "10.14445/22312803/ijctt-v74i8p103",
+      "title": "Supply Chain Visibility and End-to-End Traceability: Enhancing Food Safety and Consumer Trust in the Consumer Products Industry",
+      "authors": [
+        "Asha Kiran Ganesna"
+      ],
+      "date": "2026-09-14",
+      "year": 2026,
+      "journal": "International Journal of Computer Trends and Technology",
+      "url": "https://doi.org/10.14445/22312803/ijctt-v74i8p103",
+      "abstract": "The consumer products industry has prioritized food safety incidents and opaque supply chains, as they are no longer an afterthought for them; it's become a strategic priority. This article discusses the practical benefits for foodborne illness risk reduction, quicker recalls, and consumer-trust restoration that can be achieved through end-to-end supply chain visibility, built on the Internet of Things, distributed ledger technology, and the power of artificial intelligence and machine learning. It suggests a 5-layer reference architecture covering data capture, connectivity, data integration and trust, AI/ML analytics and end-user visibility applications, and outlines AI/ML use cases such as anomaly detection, predictive quality scoring, computer-vision quality control, and graph-based trace-back, plus a “workflow” spanning incident to recall enabling continuous model retraining. The article also examines obstacles to implementation, such as data standardization, integration with legacy systems, and cost, and ends with a vision of digital twins, generative AI, and predictive recall. The tables and diagrams illustrate a comprehensive analysis to provide a structured and evidence-based reference for practitioners and researchers on designing and evaluating modern traceability programs.",
+      "publication_type": "Research article",
+      "source": "OpenAlex",
+      "first_seen": "2026-10-15",
+      "openalex_id": "https://openalex.org/W7212488896",
+      "domain": "General food safety",
+      "application": "Laboratory testing",
+      "data_type": "Other",
+      "ai_method": "LLMs / foundation models",
+      "ai_family": "LLMs / foundation models",
+      "source_group": "automated_candidate",
+      "summary": "Automated candidate identified from title and abstract. Open the source to assess the study.",
+      "screening": {
+        "status": "automated_candidate",
+        "confidence": 0.97,
+        "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
       }
     },
@@ -1095,7 +1157,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/toxins18090392",
@@ -1129,7 +1192,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.3390/pr14182884",
@@ -1162,7 +1226,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1038/s41538-026-01054-5",
@@ -1199,7 +1264,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1021/acs.analchem.6c04116",
@@ -1237,7 +1303,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.foodres.2026.120763",
@@ -1268,7 +1335,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.3390/foods15173152",
@@ -1302,7 +1370,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 4 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/molecules31173091",
@@ -1336,7 +1405,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1007/s10791-026-10481-7",
@@ -1366,7 +1436,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.70645/3078-3437.1073",
@@ -1399,7 +1470,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 7 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3389/fped.2026.1967922",
@@ -1428,7 +1500,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 4 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.33545/26174693.2026.v10.i9w.10120",
@@ -1460,7 +1533,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 6 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.33545/26174693.2026.v10.i9h.10120",
@@ -1492,7 +1566,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 6 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1016/j.microc.2026.119227",
@@ -1525,7 +1600,8 @@
       "source": "Post-review curated extension (2025–2026)",
       "first_seen": "2026-10-15",
       "source_group": "post_review_sample",
-      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review."
+      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.fbio.2026.109554",
@@ -1551,7 +1627,8 @@
       "source": "Post-review curated extension (2025–2026)",
       "first_seen": "2026-10-15",
       "source_group": "post_review_sample",
-      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review."
+      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/molecules31173067",
@@ -1582,7 +1659,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1016/j.array.2026.101126",
@@ -1614,7 +1692,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 2 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "LLMs / foundation models"
     },
     {
       "id": "doi:10.70917/ijcisim-2026-5034",
@@ -1644,7 +1723,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 10 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/foods15172949",
@@ -1675,7 +1755,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 4 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.64823/ijter.2621008",
@@ -1705,7 +1786,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 6 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.3390/agriculture16161796",
@@ -1740,7 +1822,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 5 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.47836/pjst.34.4.01",
@@ -1769,6 +1852,79 @@
         "status": "automated_candidate",
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
+        "classification_method": "heuristic"
+      },
+      "ai_family": "Other / mixed"
+    },
+    {
+      "id": "doi:10.3390/foods15162925",
+      "doi": "10.3390/foods15162925",
+      "title": "Artificial Intelligence-Driven Dairy Quality Assessment: From Advanced Sensing Technologies to Explainable Intelligence",
+      "authors": [
+        "Xiaodong Song",
+        "Zhiran Liang",
+        "Congyang Cheng",
+        "Rina Wu",
+        "Guanjun Dong",
+        "Xiaohui Cui",
+        "Haohan Ding"
+      ],
+      "date": "2026-08-20",
+      "year": 2026,
+      "journal": "Foods",
+      "url": "https://doi.org/10.3390/foods15162925",
+      "abstract": "Artificial intelligence (AI) is transforming dairy quality assessment by enabling rapid, non-destructive, and data-driven monitoring across the dairy supply chain. Conventional analytical methods, although accurate, are often labor-intensive, time-consuming, and unsuitable for real-time applications. The integration of advanced sensing technologies with AI has therefore emerged as a promising approach for improving dairy quality control and food safety. This review examines recent advances in AI-enabled dairy quality assessment, covering spectroscopy-based sensing technologies, biomimetic sensing systems, machine vision, and multimodal data fusion. Particular attention is given to their applications in major dairy products, including raw milk, milk powder, cheese, and yogurt. Comparative analysis shows that AI-assisted sensing significantly enhances the accuracy, efficiency, and automation of compositional analysis, adulteration detection, microbial screening, freshness evaluation, and defect inspection, while multimodal approaches offer new opportunities for comprehensive quality assessment. The review further highlights the emerging role of explainable artificial intelligence (XAI) in improving the transparency and trustworthiness of dairy detection systems. Recent advances in feature attribution, decision interpretation, and uncertainty quantification are discussed, together with challenges related to data scarcity, model generalization, cross-instrument transferability, and explainability evaluation. Future developments in multimodal foundation models, standardized datasets, and explainable intelligent systems are expected to accelerate the deployment of trustworthy and scalable dairy quality assurance frameworks.",
+      "publication_type": "Research article",
+      "source": "OpenAlex",
+      "first_seen": "2026-10-15",
+      "openalex_id": "https://openalex.org/W7203827677",
+      "domain": "Food fraud & authenticity",
+      "application": "Inspection & enforcement",
+      "data_type": "Spectroscopy",
+      "ai_method": "LLMs / foundation models",
+      "ai_family": "LLMs / foundation models",
+      "source_group": "automated_candidate",
+      "summary": "Automated candidate identified from title and abstract. Open the source to assess the study.",
+      "screening": {
+        "status": "automated_candidate",
+        "confidence": 0.84,
+        "reason": "Keyword evidence: 2 food-safety signals, 2 AI signals. Heuristic output requires validation.",
+        "classification_method": "heuristic"
+      }
+    },
+    {
+      "id": "doi:10.3390/foods15162916",
+      "doi": "10.3390/foods15162916",
+      "title": "Can ChatGPT Reflect Professional HACCP Judgments? A Comparative Study in Hospitality Food Safety",
+      "authors": [
+        "Despoina Maria Konstantinidi",
+        "Elisavet Stavropoulou",
+        "Agathangelos Stavropoulos",
+        "Chrysoula Chrysa Voidarou",
+        "Christina Tsigalou",
+        "Vassiliki Ch. Pitiriga",
+        "Christos Stefanis"
+      ],
+      "date": "2026-08-20",
+      "year": 2026,
+      "journal": "Foods",
+      "url": "https://doi.org/10.3390/foods15162916",
+      "abstract": "The implementation of Hazard Analysis and Critical Control Points (HACCP) systems remains a cornerstone of food safety management. However, their effectiveness is influenced by organizational, human, and technological factors. This study investigates professional perceptions of HACCP implementation and explores the extent to which a large language model (LLM)—ChatGPT 4.1—can approximate human judgments in this domain. A structured questionnaire was administered to 90 professionals operating in food service, hospitality, industry, and consultancy. Responses were compared with outputs generated by ChatGPT 4.1 via a standardized multi-persona prompting protocol simulating five professional roles. To enhance response stability and minimize stochastic variation, each question was submitted in independent zero-shot sessions over multiple iterations. Responses were analysed across three thematic dimensions: barriers to HACCP implementation, perceived benefits, and digital readiness. Spearman correlation analysis of human responses revealed a systemic “training–turnover association,” where high staff turnover (r = 0.62, p < 0.01) was significantly associated with difficulties in maintaining continuous training. Statistical benchmarking using one-sample t-tests showed that the tested model generated significantly higher ratings for implementation barriers (p < 0.001) and digital readiness (p < 0.001) than the corresponding human assessments. These findings suggest that while ChatGPT can approximate aggregated professional perceptions in certain areas, notable divergences persist in operational and readiness-related domains. The study contributes methodological insights into human–AI comparative research and highlights opportunities and limitations of AI-supported decision-making in food safety management systems.",
+      "publication_type": "Research article",
+      "source": "OpenAlex",
+      "first_seen": "2026-10-15",
+      "openalex_id": "https://openalex.org/W7203838234",
+      "domain": "General food safety",
+      "application": "Early warning",
+      "data_type": "Other",
+      "ai_method": "LLMs / foundation models",
+      "ai_family": "LLMs / foundation models",
+      "source_group": "automated_candidate",
+      "summary": "Automated candidate identified from title and abstract. Open the source to assess the study.",
+      "screening": {
+        "status": "automated_candidate",
+        "confidence": 0.84,
+        "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
       }
     },
@@ -1799,7 +1955,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 4 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1007/s42452-026-09228-2",
@@ -1833,7 +1990,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 4 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.snb.2026.140704",
@@ -1868,7 +2026,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 2 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.meafoo.2026.100314",
@@ -1904,7 +2063,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1016/j.jfca.2026.109443",
@@ -1933,7 +2093,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 4 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.4238/2p88y238",
@@ -1966,7 +2127,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.5281/zenodo.21892807",
@@ -1995,7 +2157,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.5281/zenodo.21892240",
@@ -2024,7 +2187,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 4 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.foodres.2026.120364",
@@ -2056,7 +2220,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 2 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1016/j.jfca.2026.109427",
@@ -2088,7 +2253,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.63544/w0r2bt07",
@@ -2117,7 +2283,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.foodcont.2026.112509",
@@ -2158,7 +2325,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.tim.2026.07.010",
@@ -2192,7 +2360,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1016/j.crmeth.2026.101548",
@@ -2227,7 +2396,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 3 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1007/s00217-026-05238-x",
@@ -2261,7 +2431,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.59543/jidmis.v3.1337",
@@ -2290,7 +2461,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 3 food-safety signals, 5 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1038/s41538-026-01005-0",
@@ -2320,7 +2492,8 @@
         "confidence": 0.66,
         "reason": "Keyword evidence: 2 food-safety signals, 1 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.52973/rcfcv-e363961",
@@ -2348,6 +2521,87 @@
         "status": "automated_candidate",
         "confidence": 0.97,
         "reason": "Keyword evidence: 2 food-safety signals, 3 AI signals. Heuristic output requires validation.",
+        "classification_method": "heuristic"
+      },
+      "ai_family": "Machine learning (ML)"
+    },
+    {
+      "id": "doi:10.1186/s12302-026-01472-y",
+      "doi": "10.1186/s12302-026-01472-y",
+      "title": "Developing a FAIR data policy for chemical risk assessment and exploring future topics and stakeholder interests with large language models and data sciences",
+      "authors": [
+        "Rob H. Stierum",
+        "Gino J. Kalkman",
+        "Sabina Bijlsma",
+        "Jildau Bouwman",
+        "Susana Loureiro",
+        "Iseult Lynch",
+        "Barbara Magagna",
+        "Penny E. H. Nymark",
+        "Peter C. von der Ohe",
+        "Tessa E. Pronk",
+        "Erik Schultes",
+        "Karin Slater",
+        "Jan Theunis",
+        "Fred J. van de Brug"
+      ],
+      "date": "2026-07-25",
+      "year": 2026,
+      "journal": "Environmental Sciences Europe",
+      "url": "https://doi.org/10.1186/s12302-026-01472-y",
+      "abstract": "Abstract Background The EU Partnership for the Assessment of Risk from Chemicals (PARC) develops novel methods for human health and environmental risk assessment (RA) for regulatory application. Large amounts of environmental monitoring, in vitro, in silico and other types of data are generated. To facilitate data reuse and information exchange within and between research and regulatory stakeholders, it is important to document and manage data. In 2016, the FAIR (Findable, Accessible, Interoperable and Reusable) data principles were introduced to foster reuse of data. To adopt FAIR within PARC, a PARC FAIR data policy (PFDP) was developed. Results To determine PFDP topics, expert panel discussions were held, followed by review of 37 stakeholder documents issued by authorities in RA and environmental, health, (open) data sciences. This resulted in a taxonomy of 57 topics (“narrower term(s)” (NT(s), together with 15 “broader terms”), forming the basis of the PFDP. These included, aside FAIR, aspects specifically relevant for RA, such as GDPR, sensitive data, transparency and data valuation. Large Language Models (LLMs) were used to contrive novel terms for PFDP revisions. Seventy-eight novel terms were discovered by LLMs, compared to 57 NTs already identified by experts. Based on a frequency analysis within stakeholder documents, of all 135 terms (57 + 78) -further categorized under eight ChatGPT-derived “FAIR categories”- and subsequent cluster analyses (PCA, K-means), differences between stakeholders were identified. Organizations concerned with environmental and human chemical RA (e.g. European Chemicals Agency, European Food Safety Authority) could be distinguished from those focused on technical FAIR data issues and those involved in publicly funded research and open science. Conclusions To foster environmental and human health research data for research purposes and adoption of research data in regulatory applications, a taxonomy of terms and FAIR data policy was developed. A frequency analysis of the taxonomy (augmented with LLM-derived) terms in stakeholder documents revealed differences between stakeholders, which may help identify trends e.g. the adoption of FAIR principles within and across sciences and regulatory domains for (NG) RA. The PFDP is designed to support data driven RA improvement within PARC but can equally contribute to FAIR data in other environmental RA research and regulatory communities.",
+      "publication_type": "Research article",
+      "source": "OpenAlex",
+      "first_seen": "2026-10-15",
+      "openalex_id": "https://openalex.org/W7171149033",
+      "domain": "General food safety",
+      "application": "Early warning",
+      "data_type": "Other",
+      "ai_method": "LLMs / foundation models",
+      "ai_family": "LLMs / foundation models",
+      "source_group": "automated_candidate",
+      "summary": "Automated candidate identified from title and abstract. Open the source to assess the study.",
+      "screening": {
+        "status": "automated_candidate",
+        "confidence": 0.84,
+        "reason": "Keyword evidence: 1 food-safety signals, 3 AI signals. Heuristic output requires validation.",
+        "classification_method": "heuristic"
+      }
+    },
+    {
+      "id": "doi:10.1016/j.yrtph.2026.106182",
+      "doi": "10.1016/j.yrtph.2026.106182",
+      "title": "Automated extraction of toxicological mechanism of action from PubMed literature using Large Language Models",
+      "authors": [
+        "Arnaud Molle",
+        "Nelly D. Saenen",
+        "Karen Smeets",
+        "Karolien Bijnens",
+        "Marc Aerts",
+        "Cécile Kremer",
+        "Efisio Solazzo",
+        "José Cortiñas Abrahantes"
+      ],
+      "date": "2026-07-24",
+      "year": 2026,
+      "journal": "Regulatory Toxicology and Pharmacology",
+      "url": "https://doi.org/10.1016/j.yrtph.2026.106182",
+      "abstract": "Risk assessment activities at the European Food Safety Authority face mounting challenges from an increasing volume of compounds requiring evaluation and exponential growth in scientific literature. To address these challenges, toxicologists started grouping compounds based on their mechanism of action in the body, allowing study comparisons similar to current risk assessment strategies. The LLMs-rev pipeline was created to retrieve potentially relevant papers from PubMed, assess their relevance, and extract the mechanism of action (MoA) information from accessible publications using large language models. Applied to 121 compounds, the system processed over 400,000 papers, identifying 30,250 as containing relevant information and extracting specific MoA quotations from 4500 open-access publications. The automated approach demonstrated processing speeds exceeding 8000 papers per hour, dramatically outpacing conventional manual screening methods that typically assess 100-120 papers per hour. While the system proved particularly effective for compounds for which abundant literature was available, human expertise remained essential for interpreting complex MoAs that required contextual data analysis. The optimized prompts minimized model hallucinations by restricting outputs to direct quotations from verified sources. The methodology demonstrates considerable potential for accelerating risk assessment workflows while maintaining scientific rigor through the complementary use of human oversight.",
+      "publication_type": "Research article",
+      "source": "OpenAlex",
+      "first_seen": "2026-10-15",
+      "openalex_id": "https://openalex.org/W7170680460",
+      "domain": "General food safety",
+      "application": "Laboratory testing",
+      "data_type": "Other",
+      "ai_method": "LLMs / foundation models",
+      "ai_family": "LLMs / foundation models",
+      "source_group": "automated_candidate",
+      "summary": "Automated candidate identified from title and abstract. Open the source to assess the study.",
+      "screening": {
+        "status": "automated_candidate",
+        "confidence": 0.66,
+        "reason": "Keyword evidence: 1 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
       }
     },
@@ -2383,7 +2637,8 @@
         "confidence": 0.84,
         "reason": "Keyword evidence: 2 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1093/fqsafe/fyag058",
@@ -2418,7 +2673,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 7 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1021/acs.analchem.6c01731",
@@ -2455,7 +2711,8 @@
         "confidence": 0.97,
         "reason": "Keyword evidence: 4 food-safety signals, 2 AI signals. Heuristic output requires validation.",
         "classification_method": "heuristic"
-      }
+      },
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1038/s41538-026-00858-9",
@@ -2485,7 +2742,8 @@
       "source": "Post-review curated extension (2025–2026)",
       "first_seen": "2026-10-15",
       "source_group": "post_review_sample",
-      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review."
+      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review.",
+      "ai_family": "Other / mixed"
     },
     {
       "id": "doi:10.1016/j.bios.2025.118296",
@@ -2511,7 +2769,8 @@
       "source": "Post-review curated extension (2025–2026)",
       "first_seen": "2026-10-15",
       "source_group": "post_review_sample",
-      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review."
+      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "doi:10.1038/s41538-025-00650-1",
@@ -2547,7 +2806,8 @@
       "source": "Post-review curated extension (2025–2026)",
       "first_seen": "2026-10-15",
       "source_group": "post_review_sample",
-      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review."
+      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "doi:10.1038/s41538-025-00634-1",
@@ -2580,7 +2840,8 @@
       "source": "Post-review curated extension (2025–2026)",
       "first_seen": "2026-10-15",
       "source_group": "post_review_sample",
-      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review."
+      "collection_note": "Additional post-review research article, not part of van Meer et al. 2026 systematic review.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-82",
@@ -2614,7 +2875,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "RF SVM NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-79",
@@ -2648,7 +2910,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "ANN RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-54",
@@ -2682,7 +2945,8 @@
       "data_collection_method": "Chromogenic assay",
       "original_ai_techniques": "DNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-187",
@@ -2716,7 +2980,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF KNN SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-178",
@@ -2750,7 +3015,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "BP-NN SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-177",
@@ -2784,7 +3050,8 @@
       "data_collection_method": "Image analysis",
       "original_ai_techniques": "DCNN ResNet",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-165",
@@ -2818,7 +3085,8 @@
       "data_collection_method": "E-nose",
       "original_ai_techniques": "SVM KNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-141",
@@ -2852,7 +3120,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "SVM RF XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-117",
@@ -2886,7 +3155,8 @@
       "data_collection_method": "Optical spectroscopy (surface enhanced Raman)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-108",
@@ -2920,7 +3190,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "BP-NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-101",
@@ -2954,7 +3225,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-HRMS)",
       "original_ai_techniques": "ANN RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-96",
@@ -2988,7 +3260,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "SVM RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-95",
@@ -3022,7 +3295,8 @@
       "data_collection_method": "PCR-based molecular identification",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-78",
@@ -3056,7 +3330,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "RF SVM XGBOOST KNN ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-76",
@@ -3090,7 +3365,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-74",
@@ -3124,7 +3400,8 @@
       "data_collection_method": "Microscopy",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-69",
@@ -3158,7 +3435,8 @@
       "data_collection_method": "Optical spectroscopy (fluorescence)",
       "original_ai_techniques": "CNN SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-64",
@@ -3192,7 +3470,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-63",
@@ -3226,7 +3505,8 @@
       "data_collection_method": "Hyperspectral microscope imaging",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-58",
@@ -3260,7 +3540,8 @@
       "data_collection_method": "Microscopy",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-50",
@@ -3294,7 +3575,8 @@
       "data_collection_method": "Microscopy",
       "original_ai_techniques": "Computer vision",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-27",
@@ -3328,7 +3610,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-26",
@@ -3362,7 +3645,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-20",
@@ -3396,7 +3680,8 @@
       "data_collection_method": "Optical spectroscopy (diffuse reflectance)",
       "original_ai_techniques": "AlexNet CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-19",
@@ -3430,7 +3715,8 @@
       "data_collection_method": "",
       "original_ai_techniques": "FT-NIR ResNet CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-189",
@@ -3464,7 +3750,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "LSTM SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-184",
@@ -3498,7 +3785,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "ANN KNN DT NB",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-175",
@@ -3532,7 +3820,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "GNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-167",
@@ -3566,7 +3855,8 @@
       "data_collection_method": "Image analysis",
       "original_ai_techniques": "Resnet CNN Alexnet",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-162",
@@ -3600,7 +3890,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-161",
@@ -3634,7 +3925,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "BERT",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-16",
@@ -3668,7 +3960,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "SVM RF BP-NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-155",
@@ -3702,7 +3995,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "LIME SHAP",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-153",
@@ -3736,7 +4030,8 @@
       "data_collection_method": "Optical spectroscopy (fluorescence)",
       "original_ai_techniques": "KNN RF SVM CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-152",
@@ -3770,7 +4065,8 @@
       "data_collection_method": "Optical spectroscopy (laser breakdown)",
       "original_ai_techniques": "SVM ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-151",
@@ -3804,7 +4100,8 @@
       "data_collection_method": "Optical spectroscopy (NIR)",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-149",
@@ -3838,7 +4135,8 @@
       "data_collection_method": "Optical spectroscopy (laser breakdown)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-147",
@@ -3872,7 +4170,8 @@
       "data_collection_method": "E-nose",
       "original_ai_techniques": "SVM ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-145",
@@ -3906,7 +4205,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-143",
@@ -3940,7 +4240,8 @@
       "data_collection_method": "pH sensor, methane sensor etc.",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-140",
@@ -3974,7 +4275,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (Direct-infusion MS)",
       "original_ai_techniques": "DT",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-134",
@@ -4008,7 +4310,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-133",
@@ -4042,7 +4345,8 @@
       "data_collection_method": "Video analysis",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-132",
@@ -4076,7 +4380,8 @@
       "data_collection_method": "Genomics (SNP)",
       "original_ai_techniques": "XGBOOST SVM KNN RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-126",
@@ -4110,7 +4415,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "BP-NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-125",
@@ -4144,7 +4450,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "XGBOOST RF NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-122",
@@ -4178,7 +4485,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "RF ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-120",
@@ -4212,7 +4520,8 @@
       "data_collection_method": "",
       "original_ai_techniques": "ELISA Gradient Boosting",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-12",
@@ -4246,7 +4555,8 @@
       "data_collection_method": "E-nose",
       "original_ai_techniques": "LDA",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-119",
@@ -4280,7 +4590,8 @@
       "data_collection_method": "Electrochemical sensor",
       "original_ai_techniques": "XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-115",
@@ -4314,7 +4625,8 @@
       "data_collection_method": "Electrochemical sensor",
       "original_ai_techniques": "SVM XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-113",
@@ -4348,7 +4660,8 @@
       "data_collection_method": "Electrochemical sensor",
       "original_ai_techniques": "CNN ResNet",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-110",
@@ -4382,7 +4695,8 @@
       "data_collection_method": "Bioluminescence",
       "original_ai_techniques": "SVM RF NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-107",
@@ -4416,7 +4730,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-105",
@@ -4450,7 +4765,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "DF CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-104",
@@ -4484,7 +4800,8 @@
       "data_collection_method": "Hyperspectral imaging",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-97",
@@ -4518,7 +4835,8 @@
       "data_collection_method": "PCR-based molecular identification",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-94",
@@ -4552,7 +4870,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "GAN XGBOOST RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-92",
@@ -4586,7 +4905,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "Elastic net regression",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-86",
@@ -4620,7 +4940,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "XGBOOST KNN SVM RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-84",
@@ -4654,7 +4975,8 @@
       "data_collection_method": "Microscopy",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-83",
@@ -4688,7 +5010,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-77",
@@ -4722,7 +5045,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "Active Learning",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-73",
@@ -4756,7 +5080,8 @@
       "data_collection_method": "Chromogenic assay",
       "original_ai_techniques": "ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-57",
@@ -4790,7 +5115,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (maldi-ToF-MS)",
       "original_ai_techniques": "SVM CNN Denoising Autoencoder",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-49",
@@ -4824,7 +5150,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "GAN SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-186",
@@ -4858,7 +5185,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "BERT LSTM SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-182",
@@ -4892,7 +5220,8 @@
       "data_collection_method": "Text analysis (social media)",
       "original_ai_techniques": "SVM BERT",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-176",
@@ -4926,7 +5255,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-174",
@@ -4960,7 +5290,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "Denoising Autoencoder",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-172",
@@ -4994,7 +5325,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "CNN RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-171",
@@ -5028,7 +5360,8 @@
       "data_collection_method": "Text analysis (food recalls)",
       "original_ai_techniques": "DNN ResNet",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-150",
@@ -5062,7 +5395,8 @@
       "data_collection_method": "Image analysis",
       "original_ai_techniques": "ResNet",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-15",
@@ -5096,7 +5430,8 @@
       "data_collection_method": "Optical spectroscopy (fluorescence imaging)",
       "original_ai_techniques": "SVM ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-148",
@@ -5130,7 +5465,8 @@
       "data_collection_method": "Optical spectroscopy (FT-NIR)",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-146",
@@ -5164,7 +5500,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "SVM RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-142",
@@ -5198,7 +5535,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (ICP-MS)",
       "original_ai_techniques": "RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-139",
@@ -5232,7 +5570,8 @@
       "data_collection_method": "Optical spectroscopy (IR)",
       "original_ai_techniques": "XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-138",
@@ -5266,7 +5605,8 @@
       "data_collection_method": "Optical spectroscopy (FT-NIR)",
       "original_ai_techniques": "ResNet CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-13",
@@ -5300,7 +5640,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-129",
@@ -5334,7 +5675,8 @@
       "data_collection_method": "Metabolomics",
       "original_ai_techniques": "RF XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-128",
@@ -5374,7 +5716,8 @@
           "table": 2
         }
       ],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-127",
@@ -5408,7 +5751,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "DT NN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-118",
@@ -5442,7 +5786,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "LSTM XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-116",
@@ -5476,7 +5821,8 @@
       "data_collection_method": "Image analysis",
       "original_ai_techniques": "SVM BP-NN RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-112",
@@ -5510,7 +5856,8 @@
       "data_collection_method": "Optical spectroscopy",
       "original_ai_techniques": "LDA",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-103",
@@ -5544,7 +5891,8 @@
       "data_collection_method": "Near-field microwave sensing",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-102",
@@ -5578,7 +5926,8 @@
       "data_collection_method": "Hyperspectral imaging",
       "original_ai_techniques": "ELM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-99",
@@ -5612,7 +5961,8 @@
       "data_collection_method": "PCR-based molecular identification",
       "original_ai_techniques": "RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-93",
@@ -5646,7 +5996,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-91",
@@ -5680,7 +6031,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-89",
@@ -5714,7 +6066,8 @@
       "data_collection_method": "PCR-based molecular identification",
       "original_ai_techniques": "RF BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-87",
@@ -5748,7 +6101,8 @@
       "data_collection_method": "Metabolomics",
       "original_ai_techniques": "ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-81",
@@ -5782,7 +6136,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-75",
@@ -5816,7 +6171,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "RNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-72",
@@ -5850,7 +6206,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "DT",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-70",
@@ -5884,7 +6241,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-68",
@@ -5918,7 +6276,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-67",
@@ -5952,7 +6311,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "GA ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-65",
@@ -5986,7 +6346,8 @@
       "data_collection_method": "Optical spectroscopy (Vis/NIR)",
       "original_ai_techniques": "GA",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-62",
@@ -6020,7 +6381,8 @@
       "data_collection_method": "Optical spectroscopy (IR)",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-53",
@@ -6054,7 +6416,8 @@
       "data_collection_method": "Chromogenic assay",
       "original_ai_techniques": "DNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-28",
@@ -6088,7 +6451,8 @@
       "data_collection_method": "Combined data LDA ANN artificial neural network, BN Bayesian network, CNN convolutional neural network, DNN deep neural network, DT decision tree, ELM extreme learning machine, GA genetic algorithm, GAN generative adversarial network, KNN K-nearest neighbor, LDA linear discriminant analysis, NB Naïve Bayes, ResNet residual network, RNN recurrent neural network, RF random forest, SVM support vector machine,",
       "original_ai_techniques": "XGBOOST extreme gradient boosting. Combined data refers to studies that used more than one data collection method.",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-25",
@@ -6122,7 +6486,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-24",
@@ -6156,7 +6521,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "LSTM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-22",
@@ -6190,7 +6556,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-181",
@@ -6224,7 +6591,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "GA",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-180",
@@ -6258,7 +6626,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-17",
@@ -6292,7 +6661,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "DNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-14",
@@ -6326,7 +6696,8 @@
       "data_collection_method": "Chromogenic assay",
       "original_ai_techniques": "NN RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-136",
@@ -6360,7 +6731,8 @@
       "data_collection_method": "Optical spectroscopy (IR)",
       "original_ai_techniques": "SVM KNN RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-135",
@@ -6394,7 +6766,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "SVM KNN XGBOOST ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-124",
@@ -6428,7 +6801,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "SVM RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-121",
@@ -6462,7 +6836,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (LC-MS/MS)",
       "original_ai_techniques": "BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-111",
@@ -6496,7 +6871,8 @@
       "data_collection_method": "Optical spectroscopy",
       "original_ai_techniques": "ELM LDA",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-109",
@@ -6530,7 +6906,8 @@
       "data_collection_method": "Optical spectroscopy (ATR-FTIR)",
       "original_ai_techniques": "ELM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-88",
@@ -6564,7 +6941,8 @@
       "data_collection_method": "Chromogenic assay",
       "original_ai_techniques": "SVM KNN XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-85",
@@ -6598,7 +6976,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-71",
@@ -6632,7 +7011,8 @@
       "data_collection_method": "Optical spectroscopy (surface-enhanced Raman)",
       "original_ai_techniques": "SVM XGBOOST",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-60",
@@ -6666,7 +7046,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (maldi-ToF-MS)",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-56",
@@ -6700,7 +7081,8 @@
       "data_collection_method": "Hyperspectral microscope imaging",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-55",
@@ -6734,7 +7116,8 @@
       "data_collection_method": "Hyperspectral microscope imaging",
       "original_ai_techniques": "Autoencoder",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-51",
@@ -6768,7 +7151,8 @@
       "data_collection_method": "Hyperspectral microscope imaging",
       "original_ai_techniques": "ResNet CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-48",
@@ -6802,7 +7186,8 @@
       "data_collection_method": "Genomics (16S)",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-21",
@@ -6836,7 +7221,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-185",
@@ -6870,7 +7256,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "NB SVM XGBOOST CNN LSTM BERT",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-170",
@@ -6904,7 +7291,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "RNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-166",
@@ -6938,7 +7326,8 @@
       "data_collection_method": "",
       "original_ai_techniques": "Not available Not available",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-159",
@@ -6972,7 +7361,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "NLP",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-156",
@@ -7006,7 +7396,8 @@
       "data_collection_method": "",
       "original_ai_techniques": "GC-FID DNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-137",
@@ -7040,7 +7431,8 @@
       "data_collection_method": "Hyperspectral imaging",
       "original_ai_techniques": "GA",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-131",
@@ -7074,7 +7466,8 @@
       "data_collection_method": "Several",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-130",
@@ -7108,7 +7501,8 @@
       "data_collection_method": "Inductively Coupled Plasma Optical Emission Spectrometry",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-123",
@@ -7142,7 +7536,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-90",
@@ -7176,7 +7571,8 @@
       "data_collection_method": "Colony counts, PCR",
       "original_ai_techniques": "RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-80",
@@ -7210,7 +7606,8 @@
       "data_collection_method": "Colony counts",
       "original_ai_techniques": "ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-59",
@@ -7244,7 +7641,8 @@
       "data_collection_method": "Mass Spectrometry-Based Analysis (maldi-tof ms)",
       "original_ai_techniques": "SVM RF",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-52",
@@ -7278,7 +7676,8 @@
       "data_collection_method": "Optical spectroscopy (Scatterometer)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-188",
@@ -7312,7 +7711,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "ELM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-18",
@@ -7346,7 +7746,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-160",
@@ -7380,7 +7781,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "SVM BERT",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-154",
@@ -7414,7 +7816,8 @@
       "data_collection_method": "E-tongue",
       "original_ai_techniques": "CNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Deep learning (DL)"
     },
     {
       "id": "review-ref-114",
@@ -7448,7 +7851,8 @@
       "data_collection_method": "Optical spectroscopy (Raman)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-23",
@@ -7482,7 +7886,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "log-linear maximum entropy",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-179",
@@ -7516,7 +7921,8 @@
       "data_collection_method": "Microscopy",
       "original_ai_techniques": "ANN SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-173",
@@ -7550,7 +7956,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "ELM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-169",
@@ -7584,7 +7991,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "ELM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-164",
@@ -7618,7 +8026,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "log-linear maximum entropy",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-158",
@@ -7652,7 +8061,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-66",
@@ -7686,7 +8096,8 @@
       "data_collection_method": "Optical spectroscopy multispectral), Colony counts",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-157",
@@ -7720,7 +8131,8 @@
       "data_collection_method": "Genomics (whole genome sequencing)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-144",
@@ -7754,7 +8166,8 @@
       "data_collection_method": "Genomics (SNP)",
       "original_ai_techniques": "SVM kNN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-98",
@@ -7788,7 +8201,8 @@
       "data_collection_method": "CAMP test, Gram stain, EcoRI ribotyping",
       "original_ai_techniques": "RF SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-61",
@@ -7822,7 +8236,8 @@
       "data_collection_method": "Optical spectroscopy (scatter)",
       "original_ai_techniques": "BN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-183",
@@ -7856,7 +8271,8 @@
       "data_collection_method": "Text analysis (news)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-168",
@@ -7890,7 +8306,8 @@
       "data_collection_method": "Hyperspectral microscope imaging",
       "original_ai_techniques": "Active learning",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-106",
@@ -7924,7 +8341,8 @@
       "data_collection_method": "Optical spectroscopy (multispectral)",
       "original_ai_techniques": "SVM ANN",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-47",
@@ -7958,7 +8376,8 @@
       "data_collection_method": "Optical spectroscopy (Scatterometer)",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-163",
@@ -7992,7 +8411,8 @@
       "data_collection_method": "Combined data",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     },
     {
       "id": "review-ref-100",
@@ -8026,7 +8446,8 @@
       "data_collection_method": "Hyperspectral microscope imaging",
       "original_ai_techniques": "SVM",
       "additional_contexts": [],
-      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse."
+      "extraction_note": "Bibliographic record extracted from published reference list; details should be confirmed against publisher before reuse.",
+      "ai_family": "Machine learning (ML)"
     }
   ]
 }
